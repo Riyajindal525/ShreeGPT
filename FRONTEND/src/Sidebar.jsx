@@ -1,3 +1,4 @@
+
 import { useContext, useEffect } from "react";
 import { MyContext } from "./MyContext.jsx";
 import "./Sidebar.css";
@@ -20,7 +21,7 @@ function SidebarofApp() {
 
   const getallThread = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/thread", {
+      const response = await fetch("https://shreegpt-1.onrender.com/api/thread", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
@@ -50,7 +51,7 @@ function SidebarofApp() {
     try {
       setCurrentThreadID(newthreadID);
       const response = await fetch(
-        `http://localhost:8080/api/thread/${newthreadID}`,
+        `https://shreegpt-1.onrender.com/api/thread/${newthreadID}`,
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
@@ -66,7 +67,7 @@ function SidebarofApp() {
 
   const deleteThread = async (threadID) => {
     try {
-      await fetch(`http://localhost:8080/api/thread/${threadID}`, {
+      await fetch(`https://shreegpt-1.onrender.com/api/thread/${threadID}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });
