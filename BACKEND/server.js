@@ -25,8 +25,9 @@ const connect_db = async () => {
             console.error("Error connecting to MongoDB:", err);
         });
 }
-app.post("/", (req, res) => {
-   res.send("App is Starting");
+// ✅ HOME ROUTE (important for Render)
+app.get("/", (req, res) => {
+  res.send("ShreeGPT Backend is running 🚀");
 });
 
 app.listen("/",(req,res)
