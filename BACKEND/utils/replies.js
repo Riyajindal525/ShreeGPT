@@ -16,4 +16,4 @@ What is your name, What is JavaScript, What is React. \
 Note: This is a demo AI using predefined responses. Live AI responses are currently disabled due to OpenAI credit limitations.";
 };
 
-export { generateReply };
+export { generateReply }; 
