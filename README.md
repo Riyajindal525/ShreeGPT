@@ -27,6 +27,9 @@ OpenAI API is not connected due to credit limitations; chats are stored locally 
 - **Authentication:** JWT (JSON Web Token)
 
 ---
+## Live App
+-**Visit**  : https://shree-gpt.vercel.app/
+
 
 ## Installation & Running Locally
 
