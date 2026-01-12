@@ -1,0 +1,289 @@
+.sidebar {
+  background-color: #171717;
+  color: #b4b4b4;
+  height: 100vh;
+  width: 320px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===== New Chat Button ===== */
+.sidebar button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 12px;
+  padding: 12px 14px;
+
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  color: #e5e5e5;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sidebar button:hover {
+  background-color: rgba(180, 180, 180, 0.06);
+}
+
+/* Logo */
+.logo {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #fff;
+}
+
+/* Icon/Text */
+.sidebar button span,
+.sidebar button i {
+  font-size: 16px;
+  color: #e5e5e5;
+}
+
+/* ===== Chat History ===== */
+.history {
+  margin: 8px;
+  padding: 10px;
+  flex: 1;
+  overflow-y: auto;
+  gap : 6px;
+}
+
+.history li {
+  list-style: none;
+  cursor: pointer;
+
+  padding: 8px 10px;
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  border-radius: 8px;
+
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.history li:hover {
+  background-color: rgba(180, 180, 180, 0.06);
+}
+
+/* Active Chat */
+.highlighted {
+  background-color: rgba(180, 180, 180, 0.1);
+}
+
+/* Delete Icon */
+.fa-trash {
+  opacity: 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+}
+
+.history li:hover .fa-trash {
+  opacity: 1;
+  color: #e5e5e5;
+}
+
+.fa-trash:hover {
+  color: #f87171;
+}
+
+/* ===== Footer ===== */
+.sign {
+  padding: 12px;
+  margin: 10px;
+  font-size: 13px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Scrollbar ===== */
+.history::-webkit-scrollbar {
+  width: 6px;
+}
+
+.history::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+/* Light Mode */
+.sidebar.light {
+  background-color: #f9fafb;
+  color: #222222;
+   border-right: 2px solid #e0e0e0;
+}
+
+.sidebar.light .new-chat-btn {
+  background-color: #e0e0e0;
+  color: #222222;
+}
+
+.sidebar.light .history li {
+  
+  color: #222222;
+  padding: 0.5rem;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar.light .history li:hover {
+  background-color: hsl(0, 0%, 94%);
+}
+
+.sidebar.light .history li i {
+  color: #d32f2f; /* trash icon red */
+}
+
+.sign.light{
+   border-top: 1px solid #d0d0d0;
+}
+
+.sign.light p {
+  color: #333;
+  font-size: 12px;
+}
+
+.sidebar.light .new-chat-btn {
+  background-color: #e9e9e9;
+  color: #222222;
+}
+
+.sidebar.light .new-chat-btn i{
+ 
+  color: #555;
+}
+
+.sidebar.light
+.history li:hover .fa-trash {
+  opacity: 1;
+  color: #a89f9f;
+}
+
+.sidebar.light
+.history li:hover  .fa-trash:hover {
+  opacity: 1;
+  color: #484343;
+}
+
+
+.new-chat-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 22px;
+}
+
+.thread-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.thread-item i {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.thread-item i:hover {
+  opacity: 1;
+}
+
+.sidebar-footer p{
+  font-size: 12px;
+  opacity: 0.6;
+  text-align: center;
+}
+.active{
+  background-color: #313131;
+}
+
+.sidebar.light .history .active{
+  background-color: #e0e0e0;
+}
+
+
+/* ===============================
+   RESPONSIVE SIDEBAR
+   =============================== */
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .sidebar {
+    width: 260px;
+  }
+
+  .sidebar button {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .history li {
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 260px;
+
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+
+    z-index: 1000;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* When sidebar is open */
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Hide scrollbar bounce */
+  body {
+    overflow-x: hidden;
+  }
+
+  .history {
+    padding-bottom: 80px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 420px) {
+  .sidebar {
+    width: 230px;
+  }
+
+  .sidebar button {
+    font-size: 13px;
+  }
+
+  .history li {
+    font-size: 12px;
+  }
+}

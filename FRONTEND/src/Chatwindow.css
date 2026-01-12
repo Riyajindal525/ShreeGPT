@@ -1,0 +1,1212 @@
+.chatwindow {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #212121;
+  color: #ffffff;
+  justify-content : space-between;
+  align-items: center;
+  text-align: center;
+}
+
+/* Top Navbar
+.nav-bar {
+    width : 100%;
+  height: 70px;
+ /* position:sticky;
+ top:0; */
+  /* background-color: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  /* border-bottom: 0.01px solid #565869; */
+  /* overflow: hidden;
+} */ 
+
+
+/* Top Navbar */
+.nav-bar {
+  width: 100%;
+  height: 70px;
+  background-color: #212121; /* dark default, can override with dark/light mode */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* space between left and right sections */
+  padding: 0 20px; /* some horizontal padding */
+  box-sizing: border-box;
+}
+
+/* Left side: logo / title */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff; /* dark mode text */
+}
+
+/* Right side: icons */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between moon and user */
+}
+
+/* All icons inherit text color */
+.nav-bar i {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: inherit; /* inherit from parent (dark/light) */
+}
+
+.nav-bar span {
+    margin : 1rem 2rem;
+  /* font-size: 18px; */
+  font-weight: 600;
+ 
+}
+
+
+
+.nav-bar i {
+  cursor: pointer;
+  margin-left: 6px;
+  font-size: 14px;
+  color: inherit; 
+}
+
+/* User icon */
+
+.userIcondiv i{
+     margin : 1rem 2rem;
+    font-size: 18px;
+    background-color: blue;
+}
+
+/* Chat input area */
+.ChatInputbox {
+  position: sticky;
+  bottom: 0;
+  width : 100%;
+   padding : 1rem 0;
+  background-color: #191919;
+  /* border-top: 1px solid #565869; */
+}
+
+
+.userInput {
+  max-width: 850px;
+  margin: auto;
+  position: relative;
+}
+
+/* Input field */
+.userInput input {
+  width: 700px;
+  padding: 14px 0px 14px 14px;
+  background-color: #212121;
+  border: 1px solid #424347;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+.userInput input::placeholder {
+  color: #9fa1a7;
+}
+
+/* Send button */
+.submit {
+  position: absolute;
+  right : 75px;
+  top: 7px;
+  margin-top: 5px;
+}
+
+.submit button {
+  background: transparent;
+  border: none;
+  color: #19c37d !important;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.submit button i{
+  color : #19c37d;
+}
+.submit button:hover {
+  transform: scale(1.1);
+}
+
+/* Info text */
+.info {
+  margin-top: 12px;
+  font-size: 11.5px;
+  color: #9fa1a7;
+  text-align: center;
+  line-height: 1.5;
+}
+.chatwindow.dark {
+  background-color: #212121;
+  color: #fff;
+}
+
+.chatwindow.light {
+  background-color: #fdfeff;
+  color: black !important;
+}
+
+
+.chatwindow.light .nav-bar {
+  background-color: #f9fafb; /* soft light gray */
+  color: #222222; /* dark text for contrast */
+   border-bottom: 1px solid rgba(145, 141, 141, 0.15);
+}
+
+/* Moon icon styling (toggle) */
+.nav-bar .fa-moon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  color: inherit; /* inherit text color from nav-bar */
+  position: relative;
+  right : 0;
+}
+
+.chatwindow.light .nav-bar span{
+  color : #222;
+}
+
+.chatwindow.dark .nav-bar  span .fa-solid .fa-caret-down {
+  color : #222;
+}
+
+.chatwindow.light .ChatInputbox{
+  background-color: #fcfdfd;
+  border : none;
+   border-top: 1px solid rgba(145, 141, 141, 0.15);
+}
+
+.chatwindow.light .ChatInputbox .info{
+  color : #222;
+}
+/* Bright mode */
+.chatwindow.light .userInput input {
+  background-color: hsl(0, 0%, 94%);
+  color: #222222;
+  border: 0.4px solid #f9fafb;
+}
+
+.chatwindow.light .userInput .submit button {
+  background-color: #f0f0f0;
+  color: #222222;
+}
+
+.chatwindow.light .userInput .submit button i {
+ 
+  color: #5b6460;
+}
+/* Optional: hover effect */
+.userInput .submit button:hover {
+  opacity: 0.9;
+}
+
+
+
+
+
+/* Dropdown container */
+.dropDown {
+  position: absolute;
+  top:  80px;
+  right : 80px;
+  width: 250px;
+  background-color: #40414f;
+  border-radius: 10px;
+  padding: 8px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  animation: fadeDown 0.2s ease;
+}
+
+/* Right aligned dropdown */
+.dropDown.right {
+  right: 20px;
+}
+
+/* Items */
+.dropDownItem {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+}
+
+.dropDownItem:hover {
+  background-color: #3e3f46;
+}
+
+/* Animation */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.chatwindow.light .dropDown{
+  background-color: #e0e0e0;
+}
+
+.chatwindow.light .dropDownItem{
+  color : #333;
+}
+
+.chatwindow.light .dropDownItem:hover{
+  background-color: #9fa1a7;
+}
+
+
+/* --- Overlay for Auth Modal --- */
+.authOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6); /* semi-transparent dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* --- Auth Modal Box --- */
+.authModal {
+  background-color: #fff; /* light mode default */
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  width: 350px;
+  max-width: 90%;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dark mode adaptation */
+.chatwindow.dark .authModal {
+  background-color: #1b1b1f;
+  color: #f5f5f5;
+}
+
+/* --- Close Button --- */
+.authModal .close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.authModal .close:hover {
+  transform: rotate(90deg);
+  color: #ff4d6d;
+}
+
+/* --- Modal Title --- */
+.authModal h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* --- Input Fields --- */
+.authModal input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.chatwindow.dark .authModal input {
+  background-color: #2a2a3c;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+.authModal input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* --- Submit Button --- */
+.authModal .submit-btn {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.authModal .submit-btn button {
+  background-color: #5b6460;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.authModal .submit-btn button:hover {
+  background-color: #5b6469;
+}
+
+
+/* ================================
+   RESPONSIVE CHAT WINDOW
+   ================================ */
+
+/* Large Tablet & Small Desktop */
+@media (max-width: 1200px) {
+  .userInput {
+    max-width: 750px;
+  }
+
+  .userInput input {
+    width: 650px;
+  }
+
+  .submit {
+    right: 60px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .chatwindow {
+    height: 100vh;
+  }
+
+  .nav-bar {
+    height: 65px;
+    padding: 0 16px;
+  }
+
+  .nav-left {
+    gap: 8px;
+    font-size: 1.1rem;
+  }
+
+  .nav-right {
+    gap: 15px;
+  }
+
+  .nav-bar span {
+    margin: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .nav-bar i {
+    font-size: 1.1rem;
+  }
+
+  .userInput {
+    max-width: 700px;
+  }
+
+  .userInput input {
+    width: 550px;
+    padding: 13px 0px 13px 13px;
+    font-size: 14px;
+  }
+
+  .submit {
+    right: 55px;
+    top: 6px;
+  }
+
+  .submit button {
+    font-size: 17px;
+  }
+
+  .info {
+    font-size: 11px;
+  }
+
+  .dropDown {
+    width: 230px;
+    right: 60px;
+    top: 75px;
+  }
+
+  .dropDownItem {
+    padding: 11px 14px;
+    font-size: 13.5px;
+  }
+
+  .authModal {
+    width: 380px;
+    padding: 28px 35px;
+  }
+
+  .authModal h2 {
+    font-size: 22px;
+  }
+
+  .authModal input {
+    padding: 11px 13px;
+    font-size: 13.5px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .chatwindow {
+    padding: 0;
+    height: 100vh;
+  }
+
+  /* Navbar */
+  .nav-bar {
+    height: 60px;
+    padding: 0 12px;
+  }
+
+  .nav-left {
+    gap: 6px;
+    font-size: 1rem;
+  }
+
+  .nav-left span {
+    font-size: 1rem;
+  }
+
+  .nav-right {
+    gap: 12px;
+  }
+
+  .nav-bar span {
+    margin: 0.5rem 1rem;
+  }
+
+  .nav-bar i {
+    font-size: 1rem;
+    margin-left: 4px;
+  }
+
+  .userIcondiv i {
+    margin: 0.8rem 1.5rem;
+    font-size: 16px;
+  }
+
+  /* Dropdown menu */
+  .dropDown {
+    right: 12px;
+    top: 65px;
+    width: 220px;
+  }
+
+  .dropDownItem {
+    padding: 10px 12px;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  /* Chat input */
+  .ChatInputbox {
+    padding: 0.8rem 0;
+  }
+
+  .userInput {
+    max-width: 95%;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .userInput input {
+    width: calc(100% - 60px);
+    padding: 12px 50px 12px 12px;
+    font-size: 14px;
+  }
+
+  .submit {
+    right: 18px;
+    top: 6px;
+  }
+
+  .submit button {
+    font-size: 16px;
+  }
+
+  .info {
+    font-size: 10px;
+    padding: 0 15px;
+    margin-top: 10px;
+  }
+
+  /* Auth Modal */
+  .authModal {
+    width: 320px;
+    padding: 25px 30px;
+  }
+
+  .authModal h2 {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+  .authModal input {
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    font-size: 13px;
+  }
+
+  .authModal .submit-btn button {
+    padding: 10px 22px;
+    font-size: 15px;
+  }
+
+  .authFooter {
+    font-size: 12px;
+    margin-top: 12px;
+  }
+
+  /* User Icon */
+  .userIconDiv {
+    width: 38px;
+    height: 38px;
+  }
+
+  .userIconDiv i {
+    font-size: 17px;
+    margin: 0.8rem 1.5rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .nav-bar {
+    height: 55px;
+    padding: 0 10px;
+  }
+
+  .nav-left {
+    gap: 5px;
+    font-size: 0.9rem;
+  }
+
+  .nav-left span {
+    font-size: 0.95rem;
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+
+  .nav-bar span {
+    margin: 0.4rem 0.8rem;
+  }
+
+  .nav-bar i {
+    font-size: 0.95rem;
+  }
+
+  .userIconDiv {
+    width: 36px;
+    height: 36px;
+  }
+
+  .userIconDiv i {
+    font-size: 16px;
+    margin: 0.7rem 1.2rem;
+  }
+
+  .dropDown {
+    width: 200px;
+    right: 8px;
+    top: 60px;
+  }
+
+  .dropDownItem {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+
+  .ChatInputbox {
+    padding: 0.7rem 0;
+  }
+
+  .userInput {
+    padding: 0 8px;
+  }
+
+  .userInput input {
+    width: calc(100% - 50px);
+    padding: 10px 45px 10px 10px;
+    font-size: 13px;
+  }
+
+  .submit {
+    right: 12px;
+    top: 5px;
+  }
+
+  .submit button {
+    font-size: 15px;
+  }
+
+  .info {
+    font-size: 9px;
+    padding: 0 12px;
+  }
+
+  .authModal {
+    width: 90%;
+    max-width: 300px;
+    padding: 20px 25px;
+  }
+
+  .authModal h2 {
+    font-size: 19px;
+  }
+
+  .authModal input {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .authModal .submit-btn button {
+    padding: 9px 20px;
+    font-size: 14px;
+  }
+
+  .authModal .close {
+    font-size: 16px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .nav-bar {
+    height: 50px;
+    padding: 0 8px;
+  }
+
+  .nav-left {
+    gap: 4px;
+    font-size: 0.85rem;
+  }
+
+  .nav-left span {
+    font-size: 0.9rem;
+  }
+
+  .nav-right {
+    gap: 8px;
+  }
+
+  .nav-bar span {
+    margin: 0.3rem 0.6rem;
+  }
+
+  .nav-bar i {
+    font-size: 0.9rem;
+  }
+
+  .userIconDiv {
+    width: 32px;
+    height: 32px;
+  }
+
+  .userIconDiv i {
+    font-size: 14px;
+    margin: 0.6rem 1rem;
+  }
+
+  .dropDown {
+    width: 180px;
+    right: 5px;
+    top: 55px;
+  }
+
+  .dropDownItem {
+    padding: 8px 9px;
+    font-size: 11px;
+  }
+
+  .userInput input {
+    width: calc(100% - 45px);
+    padding: 9px 40px 9px 9px;
+    font-size: 12px;
+  }
+
+  .submit {
+    right: 10px;
+    top: 4px;
+  }
+
+  .submit button {
+    font-size: 14px;
+  }
+
+  .info {
+    font-size: 8px;
+  }
+
+  .authModal {
+    width: 95%;
+    max-width: 280px;
+    padding: 18px 20px;
+  }
+
+  .authModal h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .authModal input {
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
+
+  .authModal .submit-btn button {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+
+  .authFooter {
+    font-size: 11px;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 320px) {
+  .nav-left span {
+    font-size: 0.85rem;
+  }
+
+  .nav-bar i {
+    font-size: 0.85rem;
+  }
+
+  .userInput input {
+    font-size: 11px;
+    padding: 8px 38px 8px 8px;
+  }
+
+  .submit button {
+    font-size: 13px;
+  }
+
+  .dropDown {
+    width: 160px;
+  }
+
+  .dropDownItem {
+    font-size: 10px;
+    padding: 7px 8px;
+  }
+
+  .authModal h2 {
+    font-size: 17px;
+  }
+
+  .info {
+    font-size: 7.5px;
+  }
+}
+
+/* ================================
+   MESSAGES SECTION RESPONSIVE
+   ================================ */
+
+/* Chat Messages Container - matches your Chat component */
+.chatMessages {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* User Div - Right aligned user messages */
+.userDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.userDiv .userMessage {
+  background-color: #343541;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 18px 18px 4px 18px;
+  max-width: 70%;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: 15px;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chatwindow.light .userDiv .userMessage {
+  background-color: #e8e8e8;
+  color: #222;
+}
+
+/* GPT Div - Left aligned AI responses */
+.gptDiv {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.gptDiv .gptMessage {
+  background-color: #444654;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 18px 18px 18px 4px;
+  max-width: 70%;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: 15px;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chatwindow.light .gptDiv .gptMessage {
+  background-color: #f0f0f0;
+  color: #222;
+}
+
+/* User Icon in userDiv */
+.userDiv .userIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #4a90e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 16px;
+  color: #fff;
+  order: 2; /* Appears after message on right side */
+}
+
+.chatwindow.light .userDiv .userIcon {
+  background-color: #3a7bc8;
+}
+
+/* GPT Icon in gptDiv */
+.gptDiv .gptIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #19c37d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 16px;
+  color: #fff;
+}
+
+.chatwindow.light .gptDiv .gptIcon {
+  background-color: #10a37f;
+}
+
+/* Code blocks in messages */
+.userMessage pre,
+.gptMessage pre {
+  background-color: #2d2d2d;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 8px 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.chatwindow.light .userMessage pre,
+.chatwindow.light .gptMessage pre {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.userMessage code,
+.gptMessage code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Large Tablet */
+@media (max-width: 1200px) {
+  .messages {
+    max-width: 800px;
+    padding: 18px;
+  }
+
+  .userMessage .messageContent,
+  .botMessage .messageContent {
+    font-size: 14.5px;
+    padding: 11px 15px;
+  }
+
+  .messageAvatar {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .messages {
+    max-width: 700px;
+    padding: 16px;
+    gap: 18px;
+  }
+
+  .userMessage,
+  .botMessage {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .userMessage .messageContent,
+  .botMessage .messageContent {
+    max-width: 75%;
+    font-size: 14px;
+    padding: 10px 14px;
+    border-radius: 16px 16px 4px 16px;
+  }
+
+  .botMessage .messageContent {
+    border-radius: 16px 16px 16px 4px;
+  }
+
+  .messageAvatar {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .messageTime {
+    font-size: 10px;
+  }
+
+  .messageContent pre {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .messageContent code {
+    font-size: 12px;
+    padding: 2px 5px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .messages {
+    max-width: 100%;
+    padding: 12px 10px;
+    gap: 15px;
+  }
+
+  .userMessage,
+  .botMessage {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .userMessage .messageContent,
+  .botMessage .messageContent {
+    max-width: 80%;
+    font-size: 13.5px;
+    padding: 10px 12px;
+    border-radius: 14px 14px 4px 14px;
+  }
+
+  .botMessage .messageContent {
+    border-radius: 14px 14px 14px 4px;
+  }
+
+  .messageAvatar {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+  .messageTime {
+    font-size: 9.5px;
+  }
+
+  .messageContent pre {
+    padding: 8px;
+    font-size: 11px;
+    border-radius: 6px;
+    margin: 6px 0;
+  }
+
+  .messageContent code {
+    font-size: 11px;
+    padding: 1px 4px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .messages {
+    padding: 10px 8px;
+    gap: 12px;
+  }
+
+  .userMessage,
+  .botMessage {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .userMessage .messageContent,
+  .botMessage .messageContent {
+    max-width: 85%;
+    font-size: 13px;
+    padding: 9px 11px;
+    border-radius: 12px 12px 4px 12px;
+    line-height: 1.4;
+  }
+
+  .botMessage .messageContent {
+    border-radius: 12px 12px 12px 4px;
+  }
+
+  .messageAvatar {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .messageTime {
+    font-size: 9px;
+    margin-top: 3px;
+  }
+
+  .messageContent pre {
+    padding: 6px;
+    font-size: 10px;
+    margin: 5px 0;
+  }
+
+  .messageContent code {
+    font-size: 10px;
+    padding: 1px 3px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .messages {
+    padding: 8px 6px;
+    gap: 10px;
+  }
+
+  .userMessage,
+  .botMessage {
+    gap: 5px;
+    margin-bottom: 8px;
+  }
+
+  .userMessage .messageContent,
+  .botMessage .messageContent {
+    max-width: 88%;
+    font-size: 12px;
+    padding: 8px 10px;
+    border-radius: 10px 10px 4px 10px;
+  }
+
+  .botMessage .messageContent {
+    border-radius: 10px 10px 10px 4px;
+  }
+
+  .messageAvatar {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .messageTime {
+    font-size: 8px;
+  }
+
+  .messageContent pre {
+    padding: 5px;
+    font-size: 9px;
+  }
+
+  .messageContent code {
+    font-size: 9px;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 320px) {
+  .messages {
+    padding: 6px 4px;
+    gap: 8px;
+  }
+
+  .userMessage .messageContent,
+  .botMessage .messageContent {
+    max-width: 90%;
+    font-size: 11px;
+    padding: 7px 9px;
+  }
+
+  .messageAvatar {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .messageTime {
+    font-size: 7.5px;
+  }
+
+  .messageContent pre {
+    padding: 4px;
+    font-size: 8.5px;
+  }
+}
