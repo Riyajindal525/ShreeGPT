@@ -1,4 +1,4 @@
-import qaList from "../qaList.js"; // predefined Q&A list
+import qaList from "../qalist.js"; // predefined Q&A list
 
 // PURE function (NO req, NO res)
 const generateReply = async (message) => {
