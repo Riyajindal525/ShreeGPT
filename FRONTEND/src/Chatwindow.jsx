@@ -36,7 +36,7 @@ function Chatwindow() {
     if (!prompt.trim()) return;
 
     try {
-      const response = await fetch("http://localhost:8080/api/chat", {
+      const response = await fetch("https://shreegpt-1.onrender.com/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +71,7 @@ function Chatwindow() {
     }
 
     try {
-      const response = await fetch("http://localhost:8080/api/auth/signup", {
+      const response = await fetch("https://shreegpt-1.onrender.com/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -105,7 +105,7 @@ function Chatwindow() {
     }
 
     try {
-      const response = await fetch("http://localhost:8080/api/auth/login", {
+      const response = await fetch("https://shreegpt-1.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -225,7 +225,7 @@ function Chatwindow() {
             <button><i className="fa-solid fa-paper-plane"></i></button>
           </div>
           <div className="info">
-           ShreeGPT is not taking data from OpenAI due to credit issues and is working on demo data.
+            ShreeGPT is not taking data from OpenAI due to credit issues and is working on demo data.
           </div>
         </div>
       </div>
@@ -234,3 +234,4 @@ function Chatwindow() {
 }
 
 export default Chatwindow;
+
