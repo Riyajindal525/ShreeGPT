@@ -30,7 +30,6 @@ app.get("/", (req, res) => {
   res.send("ShreeGPT Backend is running 🚀");
 });
 
-app.listen("/",(req,res)
 app.listen(port, async () => {
     console.log(`Server is listening at the ${port}`);
     await connect_db();
