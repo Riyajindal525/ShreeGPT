@@ -25,7 +25,11 @@ const connect_db = async () => {
             console.error("Error connecting to MongoDB:", err);
         });
 }
+app.post("/", (req, res) => {
+   res.send("App is Starting");
+});
 
+app.listen("/",(req,res)
 app.listen(port, async () => {
     console.log(`Server is listening at the ${port}`);
     await connect_db();
